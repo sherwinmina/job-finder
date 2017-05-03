@@ -14,7 +14,6 @@ import ReviewScreen from './screens/ReviewScreen';
 class App extends React.Component {
   
   render() {
-    const hi = 'i am a varibale';
     const MainNavigator = TabNavigator({
       welcome: { screen: WelcomeScreen },
       auth: { screen: AuthScreen },
@@ -30,12 +29,12 @@ class App extends React.Component {
           }
         })
       }
-    });
+    },  { lazyLoad: true });
 
     return (
       <View style={styles.container}>
-        <hi />
         <MainNavigator />
+        <SettingsScreen />
         <Text>hi</Text>
       </View>
     );

@@ -6,6 +6,9 @@ class SettingsScreen extends Component {
     return (
       <View>
         <Text> SettingsScreen</Text>
+        <Text> SettingsScreen</Text>
+        <Text> SettingsScreen</Text>
+        <Text> SettingsScreen</Text>
       </View>
     )
   }
