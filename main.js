@@ -31,16 +31,11 @@ class App extends React.Component {
           }
         })
       }
-    },  { lazyLoad: true });
+    },  { lazy: true });
 
     return (
-      <Provider store={store}>
-        <View style={styles.container}>
+      <Provider style={styles.container} store={store}>
           <MainNavigator />
-          <ReviewScreen />
-          <WelcomeScreen />
-          <Text>hi</Text>
-        </View>
       </Provider>
     );
   }
