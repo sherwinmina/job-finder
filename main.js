@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 
+import store from './store';
 import AuthScreen from './screens/AuthScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
 import MapScreen from './screens/MapScreen';
@@ -33,12 +34,14 @@ class App extends React.Component {
     },  { lazyLoad: true });
 
     return (
-      <View style={styles.container}>
-        <MainNavigator />
-        <ReviewScreen />
-        <WelcomeScreen />
-        <Text>hi</Text>
-      </View>
+      <Provider store={store}>
+        <View style={styles.container}>
+          <MainNavigator />
+          <ReviewScreen />
+          <WelcomeScreen />
+          <Text>hi</Text>
+        </View>
+      </Provider>
     );
   }
 }
@@ -49,6 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingBottom:50
   },
 });
 
