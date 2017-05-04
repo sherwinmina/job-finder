@@ -13,6 +13,7 @@ import ReviewScreen from './screens/ReviewScreen';
 
 class App extends React.Component {
   
+  
   render() {
     const MainNavigator = TabNavigator({
       welcome: { screen: WelcomeScreen },
@@ -34,6 +35,7 @@ class App extends React.Component {
     return (
       <View style={styles.container}>
         <MainNavigator />
+        <ReviewScreen />
         <WelcomeScreen />
         <Text>hi</Text>
       </View>
