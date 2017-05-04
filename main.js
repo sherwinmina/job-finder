@@ -34,7 +34,7 @@ class App extends React.Component {
     return (
       <View style={styles.container}>
         <MainNavigator />
-        <SettingsScreen />
+        <WelcomeScreen />
         <Text>hi</Text>
       </View>
     );
