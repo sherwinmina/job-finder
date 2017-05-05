@@ -5,7 +5,7 @@ import { MapView } from 'expo';
 class MapScreen extends Component {
   state = { 
     region: {
-      longittude: -122,
+      longitude: -122,
       latitude: 37,
       longitudeDelta: 0.04,
       latitudeDelta: 0.09
