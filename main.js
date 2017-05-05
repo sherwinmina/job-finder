@@ -31,7 +31,14 @@ class App extends React.Component {
           }
         })
       }
-    },  { lazy: true });
+    }, {
+      navigationOptions: {
+        tabBarVisible: true
+      }
+    } ,
+    { 
+      lazy: true 
+    });
 
     return (
       <Provider style={styles.container} store={store}>
