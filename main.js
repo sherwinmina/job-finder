@@ -34,7 +34,7 @@ class App extends React.Component {
         }, {
           tabBarPosition: 'bottom',
           tabBarOptions: {
-             style: { width: SCREEN_WIDTH },
+            style: { width: SCREEN_WIDTH },
             labelStyle: { fontSize: 12 }
           }
         })
@@ -51,7 +51,7 @@ class App extends React.Component {
 
     return (
       <Provider style={styles.container} store={store}>
-          <MainNavigator />
+        <MainNavigator />
       </Provider>
     );
   }
