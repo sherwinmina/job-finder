@@ -21,12 +21,14 @@ class MapScreen extends Component {
     this.setState({ mapLoaded: true });
   }
 
-  onRegionChangeComplete = (region) => {
+  onRegionChangeComplete = (region, callback) => {
     this.setState({ region });
   }
 
   onButtonPress = () => {
-    this.props.fetchJobs(this.state.region);
+    this.props.fetchJobs(this.state.region, () => {
+      this.props.navigation.navigate('deck');
+    });
   }
 
   render () {
@@ -48,8 +50,8 @@ class MapScreen extends Component {
           <Button 
             large
             title="Search This Area"
-            bacggroundColor="#009688"
-            Icon={{ name: 'search ' }}
+            backgroundColor="#009688"
+            icon={{ name: 'search' }}
             onPress={this.onButtonPress}
           />
         </View>

@@ -6,6 +6,7 @@ import {
   FETCH_JOBS
 } from './types';
 
+const JOB_ROOT_URL = 'http://api.indeed.com/ads/apisearch?';
 const JOB_QUERY_PARAMS = {
   publisher: '749373896210754',
   format: 'json',
@@ -27,6 +28,7 @@ export const fetchJobs = (region) =>  async dispatch => {
     const url = buildJobsUrl(zip);
     let data = await axios.get(url);
     dispatch({ type: FETCH_JOBS, payload: data });
+    callback();
   } catch(e) {
     console.error(e);
   }
