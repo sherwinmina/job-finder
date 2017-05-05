@@ -12,26 +12,34 @@ import DeckScreen from './screens/DeckScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import ReviewScreen from './screens/ReviewScreen';
 
-
+const SCREEN_WIDTH = Dimensions.get('window').width;
+   
 class App extends React.Component {
    
   render() {
     const MainNavigator = TabNavigator({
       welcome: { screen: WelcomeScreen },
       auth: { screen: AuthScreen },
-      main: {
+       main: {
         screen: TabNavigator({
           map: { screen: MapScreen },
-          deck : {screen: DeckScreen },
+          deck: { screen: DeckScreen },
           review: {
             screen: StackNavigator({
-              review: {screen: ReviewScreen },
+              review: { screen: ReviewScreen },
               settings: { screen: SettingsScreen }
             })
           }
+        }, {
+          tabBarPosition: 'bottom',
+          tabBarOptions: {
+             style: { width: SCREEN_WIDTH },
+            labelStyle: { fontSize: 12 }
+          }
         })
       }
-    }, {
+    }, 
+    {
       navigationOptions: {
         tabBarVisible: true
       }
