@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
 import { View , Text } from 'react-native';
-import { Mapview } from 'expo';
+import { MapView } from 'expo';
 
 class MapScreen extends Component {
+  state = { 
+    region: {
+      longittude: -122,
+      latitude: 37,
+      longitudeDelta: 0.04,
+      latitudeDelta: 0.09
+    }
+  }
+
+  componentDidMount() {
+    this.setState({ mapLoaded: true });
+  }
+
   render () {
     return (
       <View style={{ flex: 1 }} >
-        <Mapview style={{ flex: 1 }}/>
+        <MapView 
+        region={this.state.region}
+        style={{ flex: 1 }}
+        />
       </View>
     )
   }
