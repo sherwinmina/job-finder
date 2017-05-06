@@ -22,7 +22,9 @@ class AuthScreen extends Component {
   
   render () {
     return (
-      <View/>
+      <View>
+       <Text> Auth Screen </Text> 
+      </View>
     )
   }
 }
