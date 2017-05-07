@@ -7,7 +7,6 @@ import {
 } from './types';
 
 
-
 export const facebookLogin = () => async dispatch => {
   let token = await AsyncStorage.getItem('fb_token');
   if (token) {
@@ -19,15 +18,15 @@ export const facebookLogin = () => async dispatch => {
   }
 };
 
-const doFacebokkLogin = async () => {
-  let { type, token } = await Facebook.logInWithReadPermissionAsync('147084329162133',{
+const doFacebookLogin = async dispatch => {
+  let { type, token } = await Facebook.logInWithReadPermissionsAsync('196207057539134', {
     permissions: ['public_profile']
   });
 
   if (type === 'cancel') {
-    return dispatchEvent({ type: FACEBOOK_LOGIN_FAIL })
+    return dispatch({ type: FACEBOOK_LOGIN_FAIL });
   }
 
   await AsyncStorage.setItem('fb_token', token);
-  diapatch({ type: FACEBOOK_LOGIN_SUCCESS, payload: token });
+  dispatch({ type: FACEBOOK_LOGIN_SUCCESS, payload: token });
 };
