@@ -9,10 +9,10 @@ import * as actions from '../actions';
 class DeckScreen extends Component {
   renderCard(job) {
     const initialRegion = {
-      longtitutde: job.longitude,
+      longitude: job.longitude,
       latitude: job.latitude,
       latitudeDelta: 0.045,
-      longtitudeDelta: 0.02
+      longitudeDelta: 0.02
     };
 
     return (
