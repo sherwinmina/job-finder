@@ -9,7 +9,7 @@ import * as actions from '../actions';
 class DeckScreen extends Component {
   renderCard(job) {
     const initialRegion = {
-      longtitutde: job.longtitude,
+      longtitutde: job.longitude,
       latitude: job.latitude,
       latitudeDelta: 0.045,
       longtitudeDelta: 0.02
@@ -20,7 +20,7 @@ class DeckScreen extends Component {
         <View style={{ height: 300 }}>
           <MapView scrollEnabled={false}
           style={{ flex: 1 }}
-          cacheEnabled={ Platform.Os === 'android' ? true : false }
+          cacheEnabled={Platform.Os === 'android'}
           initialRegion={initialRegion}
           >
           </MapView>
