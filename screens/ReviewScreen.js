@@ -2,21 +2,22 @@ import React, { Component } from 'react';
 import { View , Text, Platform, ScrollView, Linking } from 'react-native';
 import { Button, Card } from 'react-native-elements';
 import { connect } from 'react-redux';
+import { MapView } from 'expo';
 
 class ReviewScreen extends Component {
-  // static navigationOptions = {
-  //   title: 'Review Jobs',
-  //   header: ({navigate }) => {
-  //     return {
-  //       right: <Button title ="Settings" onPress={() => navigate('settings')}
-  //       title="Settings"
-  //       onPress={() => navigate('settings')}
-  //       backgroundColor="rgba(0, 0, 0, 0)"
-  //       color="rgba(0, 122, 255, 1)"
-  //       />
-  //     };
-  //   }
-  // }
+  static navigationOptions = {
+    title: 'Review Jobs',
+    header: ({navigate }) => {
+      return {
+        right: <Button title ="Settings" onPress={() => navigate('settings')}
+        title="Settings"
+        onPress={() => navigate('settings')}
+        backgroundColor="rgba(0, 0, 0, 0)"
+        color="rgba(0, 122, 255, 1)"
+        />
+      };
+    }
+  }
 
   renderLikedJobs() {
     return this.props.likedJobs.map(job => {
