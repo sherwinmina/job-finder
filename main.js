@@ -12,8 +12,6 @@ import DeckScreen from './screens/DeckScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import ReviewScreen from './screens/ReviewScreen';
 
-
-   
 class App extends React.Component {
    
   render() {
