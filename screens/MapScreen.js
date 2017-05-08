@@ -28,7 +28,7 @@ class MapScreen extends Component {
     this.setState({ mapLoaded: true });
   }
 
-  onRegionChangeComplete = (region, callback) => {
+  onRegionChangeComplete = (region) => {
     this.setState({ region });
   }
 
