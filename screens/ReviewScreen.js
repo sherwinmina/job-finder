@@ -5,29 +5,28 @@ import { connect } from 'react-redux';
 import { MapView } from 'expo';
 
 class ReviewScreen extends Component {
-  // static navigationOptions = {
-  //   title: 'Review Jobs',
-  //   tabBarIcon: {
-  //     icon: ({ tintColor }) => {
-  //       return <Icon name="favorite" size={30} color={tintColor} />;
-  //     }
-  //   },
-  //   headerKey: ({ navigate }) => {
-  //     return {
-  //       right: (
-  //         <Button
-  //           title="Settings"
-  //           onPress={() => navigate('settings')}
-  //           backgroundColor="rgba(0,0,0,0)"
-  //           color="rgba(0, 122, 255, 1)"
-  //         />
-  //       ),
-  //       style: {
-  //         marginTop: Platform.OS === 'android' ? 24 : 0
-  //       }
-  //     };
-  //   }
-  // }
+  static navigationOptions = {
+    title: 'Review Jobs',
+    tabBarIcon: 
+      ({ tintColor }) => {
+        return <Icon name="favorite" size={30} color={tintColor} />;  
+    },
+    headerKey: ({ navigate }) => {
+      return {
+        right: (
+          <Button
+            title="Settings"
+            onPress={() => navigate('settings')}
+            backgroundColor="rgba(0,0,0,0)"
+            color="rgba(0, 122, 255, 1)"
+          />
+        ),
+        style: {
+          marginTop: Platform.OS === 'android' ? 24 : 0
+        }
+      };
+    }
+  }
 
   renderLikedJobs() {
     return this.props.likedJobs.map(job => {

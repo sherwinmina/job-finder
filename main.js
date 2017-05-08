@@ -21,7 +21,7 @@ class App extends React.Component {
     const MainNavigator = TabNavigator({
       welcome: { screen: WelcomeScreen },
       auth: { screen: AuthScreen },
-       main: {
+      main: {
         screen: TabNavigator({
           map: { screen: MapScreen },
           deck: { screen: DeckScreen },
@@ -42,7 +42,7 @@ class App extends React.Component {
     }, 
     {
       navigationOptions: {
-        tabBarVisible: true
+        tabBarVisible: false
       }
     } ,
     { 
