@@ -1,9 +1,10 @@
-import Expo from 'expo';
+import Expo, { Notifications } from 'expo';
 import React from 'react';
 import { StyleSheet, Text, View, Dimensions, Alert } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import { Provider } from 'react-redux';
 
+import registerForNotifications from './services/push_notifications';
 import store from './store';
 import AuthScreen from './screens/AuthScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
@@ -13,7 +14,22 @@ import SettingsScreen from './screens/SettingsScreen';
 import ReviewScreen from './screens/ReviewScreen';
 
 class App extends React.Component {
-   
+  componentDidMount() {
+    registerForNotifications();
+    Notifications.addListener((notification) => {
+      const { data: {text} } = notification;
+
+      if (origin === 'received' && text){
+        Alert.alert(
+        'New Push Notification',
+        text, 
+        [{ text: 'Ok' }]
+      );
+      }
+
+    });
+  }
+
   render() {
     const SCREEN_WIDTH = Dimensions.get('window').width;
     const MainNavigator = TabNavigator({
